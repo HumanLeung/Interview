@@ -1,7 +1,10 @@
 package com.company.java8.combinatorpattern;
 
+import lombok.ToString;
+
 import java.time.LocalDate;
 
+@ToString
 public class Customer {
     private final String name;
     private final String email;
