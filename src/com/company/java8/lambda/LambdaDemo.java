@@ -59,6 +59,9 @@ public class LambdaDemo {
                 .max(Comparator.comparing(Person::getAge))
                 .map(Person::getName);
 
+
+        Optional.of(oldestFemaleAge).ifPresent(Optional::get);
+        System.out.println(oldestFemaleAge.get()+"oldestFemale");
         oldestFemaleAge.ifPresent(System.out::println);
     }
 

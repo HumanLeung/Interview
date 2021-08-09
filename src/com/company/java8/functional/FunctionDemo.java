@@ -7,6 +7,7 @@ import static com.company.java8.lambda.Gender.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -15,9 +16,9 @@ public class FunctionDemo {
     public static void main(String[] args) {
 
         List<Person> arrayList = getPeople();
-        for (Person female : arrayList) {
-            System.out.println(female);
-        }
+//        for (Person female : arrayList) {
+//            System.out.println(female);
+//        }
 
         Predicate<Person> females2 = person -> FEMALE.equals(person.getGender());
         System.out.println("Predicate");
@@ -26,6 +27,12 @@ public class FunctionDemo {
         System.out.println("Stream");
         arrayList.stream().filter(females2).collect(Collectors.toList())
                 .forEach(System.out::println);
+
+        Set<Person>set = arrayList.stream().filter(females2).collect(Collectors.toSet());
+        set.forEach(value -> {
+            System.out.println(value+"this is set");
+        });
+//        System.out.println(arrayList.forEach());
     }
     private static List<Person> getPeople(){
         return Arrays.asList(
