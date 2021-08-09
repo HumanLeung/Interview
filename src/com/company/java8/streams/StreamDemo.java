@@ -20,6 +20,10 @@ import static com.company.java8.lambda.Gender.FEMALE;
 
 // collect is a supplier and you can see by consumer so this is awesome
 
+//Stream 自己不会存储元素
+//Stream 不会改变源对象.相反，他们会返回一个持有结果的新Stream.
+//Stream 操作是延迟执行额.意味着他们会等到需要结果的时候才执行.
+
 
 public class StreamDemo {
 
