@@ -16,6 +16,9 @@ public class OptionalDemo2 {
         Customer customer2 = empty.orElse(customer1);
         System.out.println(customer2);
 
+        Optional<String> str = empty.map(Customer::getName);
+        System.out.println(str.get());
+
 
     }
 }

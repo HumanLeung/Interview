@@ -7,6 +7,7 @@ import java.util.stream.Stream;
 //limit --截断流
 //skip跳过元素
 //distinct--筛选,必须重写HashCode equals
+//parallel 就是把一个数组分成多个数据块，并用不同的线程分别处理每个数据快的流
 public class StreamAPI {
     List<Employee> employees = Arrays.asList(
             new Employee("haha", 18, 2000),
