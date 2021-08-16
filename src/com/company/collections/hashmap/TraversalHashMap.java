@@ -31,7 +31,7 @@ public class TraversalHashMap {
 
         while (hmIterator.hasNext()) {
             Map.Entry<String, Integer> mapElement = hmIterator.next();
-            int marks = ((int)mapElement.getValue() + 10);
+            int marks = (mapElement.getValue() + 10);
             System.out.println(mapElement.getKey() + " : " + marks);
         }
     }
@@ -52,12 +52,12 @@ public class TraversalHashMap {
         System.out.println("HashMap after adding bonus marks:");
 
         // Using for-each loop
-        for (Map.Entry mapElement : hm.entrySet()) {
-            String key = (String)mapElement.getKey();
+        for (Map.Entry<String,Integer> mapElement : hm.entrySet()) {
+            String key = mapElement.getKey();
 
             // Add some bonus marks
             // to all the students and print it
-            int value = ((int)mapElement.getValue() + 10);
+            int value = (mapElement.getValue() + 10);
 
             System.out.println(key + " : " + value);
         }

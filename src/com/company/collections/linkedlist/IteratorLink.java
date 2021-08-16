@@ -1,5 +1,6 @@
 package com.company.collections.linkedlist;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
@@ -14,15 +15,14 @@ public class IteratorLink {
 
         // ListIterator approach
         System.out.println("ListIterator Approach: ==========");
-        ListIterator<String> listIterator = linkedList.listIterator();
-        while (listIterator.hasNext()) {
-            System.out.println(listIterator.next());
+        for (String s : linkedList) {
+            System.out.println(s);
         }
 
         System.out.println("\nLoop Approach: ==========");
         // Traditional for loop approach
-        for (int i = 0; i < linkedList.size(); i++) {
-            System.out.println(linkedList.get(i));
+        for (String s : linkedList) {
+            System.out.println(s);
         }
 
         // Java8 Loop
@@ -31,5 +31,8 @@ public class IteratorLink {
         // forEach Performs the given action for each element of the Iterable until all elements have been processed or
         // the action throws an exception.
         linkedList.forEach(System.out::println);
+        Object[] array = linkedList.toArray();
+        String[] strArray = Arrays.copyOf(array,array.length,String[].class);
+        System.out.println(Arrays.toString(strArray));
     }
 }

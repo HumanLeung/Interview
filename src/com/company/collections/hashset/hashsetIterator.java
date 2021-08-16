@@ -13,8 +13,8 @@ public class hashsetIterator {
         h.add("Geeks");
 
         // Iterating over hash set items
-        Iterator<String> i = h.iterator();
-        while (i.hasNext())
-            System.out.println(i.next());
+        for (String s : h) System.out.println(s);
+
+        h.forEach(System.out::println);
     }
 }
