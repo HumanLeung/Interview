@@ -12,7 +12,7 @@ public class SplitArray {
         list.add("IDE");
         list.add("Courses");
 
-        List[] lists = SplitArrayList.split(list);
+        List<String>[] lists = SplitArrayList.split(list);
         System.out.println(lists[0]);
         System.out.println(lists[1]);
     }

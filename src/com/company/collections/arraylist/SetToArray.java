@@ -16,12 +16,12 @@ public class SetToArray {
         //by passing set in constructor of ArrayList
         List<Integer> arraylist = new ArrayList<>(set);
 
-        Integer[] intgerArray = new Integer[arraylist.size()];
-        arraylist.toArray(intgerArray);
+        Integer[] integerArray = new Integer[arraylist.size()];
+        arraylist.toArray(integerArray);
 
         System.out.println("Display the integerArray");
-        for (int i = 0; i<intgerArray.length; i++){
-            System.out.println(intgerArray[i]+"");
+        for (int i = 0; i<integerArray.length; i++){
+            System.out.println(integerArray[i]+"");
         }
     }
 }

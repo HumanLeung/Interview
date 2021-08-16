@@ -9,7 +9,7 @@ public class RegularSort {
     public static void main(String[] args) {
         Map<String, Employee> map = new HashMap<>();
 
-        Employee employee5 = new Employee(1L, "Mer");
+        Employee employee5 = new Employee(7L, "Mer");
         map.put(employee5.getName(), employee5);
         Employee employee2 = new Employee(22L, "Annie");
         map.put(employee2.getName(), employee2);
@@ -18,7 +18,13 @@ public class RegularSort {
         Employee employee4 = new Employee(2L, "George");
         map.put(employee4.getName(), employee4);
 
-        TreeMap<String,Employee> treeMap = new TreeMap<>(map);
+        TreeMap<String,Employee> treeMap = new TreeMap<>(Collections.reverseOrder());
+        treeMap.putAll(map);
+
+        treeMap.forEach((key, value1) -> System.out.println(key + " " + value1));
+
+        Map<String, Employee> reverseMap = treeMap.descendingMap();
+        System.out.println(reverseMap);
 
 
     }
