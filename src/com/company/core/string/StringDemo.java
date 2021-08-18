@@ -13,5 +13,7 @@ public class StringDemo {
         char w = '1';
         Integer integer = new Integer(1);
         System.out.println(Integer.parseInt("1") == integer);
+        String str5 = "test";
+        System.out.println(str5.substring(1));
     }
 }
