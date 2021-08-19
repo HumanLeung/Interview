@@ -29,14 +29,11 @@ import java.util.concurrent.Executors;
 public class CyclicBarrierDemo {
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newFixedThreadPool(5);
-        CyclicBarrier barrier = new CyclicBarrier(5, new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("We are able to use the trained neural network...");
-            }
-        });
-        for(int i=0;i<5;++i)
-            executorService.execute(new Worker3(i+1, barrier));
+        CyclicBarrier barrier = new CyclicBarrier(5, ()
+                -> System.out.println("We are able to use the trained neural network..."));
+        for(int i=0;i<5;++i) {
+            executorService.execute(new Worker3(i + 1, barrier));
+        }
         executorService.shutdown();
     }
 }
@@ -55,12 +52,13 @@ class Worker3 implements Runnable {
     private void doWork() {
         System.out.println("Thread with ID " + id + " starts the task...");
         try {
-            Thread.sleep(0);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         System.out.println("Thread with ID " + id + " finished...");
         try {
+            System.out.println(cyclicBarrier.getNumberWaiting() + " this is waiting");
             cyclicBarrier.await();
             System.out.println("After await...");
         } catch (InterruptedException | BrokenBarrierException e) {

@@ -5,6 +5,7 @@ import java.util.StringTokenizer;
 public class StringDemo {
     public static void main(String[] args) {
         StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("ha");
         System.out.println("asdasd" instanceof String);
 //        StringTokenizer
 //        StringBuffer
@@ -12,6 +13,10 @@ public class StringDemo {
         int a = 2;
         char w = '1';
         Integer integer = new Integer(1);
+        String str2 = new String("new");
         System.out.println(Integer.parseInt("1") == integer);
+        System.out.println(stringBuilder.toString().equals("ha"));
+        System.out.println("new".equals(str2));
+        System.out.println("new" == str2.intern());
     }
 }

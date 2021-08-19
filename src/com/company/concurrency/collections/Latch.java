@@ -35,7 +35,7 @@ public class Latch {
     }
 }
 class Worker implements Runnable {
- private int id;
+ private final int id;
  private final CountDownLatch countDownLatch;
   public Worker(int id, CountDownLatch countDownLatch) {
       this.id = id;
