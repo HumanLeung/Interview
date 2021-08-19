@@ -14,8 +14,8 @@ public class StringDemo {
         Integer integer = new Integer(1);
         System.out.println(Integer.parseInt("1") == integer);
         System.out.println(stringBuilder.toString().equals("ha"));
-        System.out.println("new".equals(str2));
-        System.out.println("new" == str2.intern());
+//        System.out.println("new".equals(str2));
+//        System.out.println("new" == str2.intern());
         String str5 = "test";
         System.out.println(str5.substring(1));
     }
