@@ -1,21 +1,32 @@
 package com.company.concurrency.executor;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import lombok.SneakyThrows;
+
+import java.util.concurrent.*;
 
 public class ScheduledThreadPool {
-    public static void main(String[] args) {
-        ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
-        executorService.scheduleAtFixedRate(new StockMarketUpdater(),
-                1000,2000, TimeUnit.MILLISECONDS);
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
+        ScheduledExecutorService executorService = Executors.newScheduledThreadPool(2);
+        StockMarketUpdater stockMarketUpdater = new StockMarketUpdater();
+       ScheduledFuture<?> handler = executorService.scheduleAtFixedRate(stockMarketUpdater,
+                0,2000, TimeUnit.MILLISECONDS);
+       executorService.scheduleAtFixedRate(stockMarketUpdater,1000,2000,TimeUnit.MILLISECONDS);
+
+        System.out.println(handler.get());
     }
 }
 class StockMarketUpdater implements Runnable {
+   final Object object = new Object();
 
+    int num = 0;
+    @SneakyThrows
     @Override
     public void run() {
-        System.out.println("Updating and downloading stock related data from web.....");
+        synchronized (object){
+            System.out.println(++num);
+            Thread.sleep(2000);
+            System.out.println("Sleep done"+ Thread.currentThread().getName());
+        }
     }
 }
 // 它的主要特点为: 线程复用: 控制最大并发数： 管理线程.

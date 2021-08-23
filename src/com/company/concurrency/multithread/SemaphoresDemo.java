@@ -11,20 +11,21 @@ public class SemaphoresDemo {
         for(i=0;i<10;i++) {
             executorService.execute(new Runnable() {
                 public void run() {
-                    Downloader.INSTANCE.downloadData(i);
+                    Downloader.INSTANCE.downloadData();
                 }
             });
         }
+        executorService.shutdown();
         System.out.println("it is done");
     }
 }
 enum Downloader {
     INSTANCE;
     private final Semaphore semaphore = new Semaphore(5, true);
-    public void downloadData(int i) {
+    public void downloadData() {
         try {
             semaphore.acquire();
-            download(i);
+            download();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
@@ -32,8 +33,8 @@ enum Downloader {
             System.out.println("releasing....");
         }
     }
-    private void download(int i) {
-        System.out.println("Downloading data from the web... "+ i);
+    private void download() {
+        System.out.println("Downloading data from the web... ");
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
