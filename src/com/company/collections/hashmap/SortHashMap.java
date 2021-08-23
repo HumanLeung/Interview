@@ -7,6 +7,7 @@ public class SortHashMap {
     public static void main(String[] args) {
         HashMap<String, Integer> hm = new HashMap<String, Integer>();
 
+
         // enter data into hashmap
         hm.put("Math", 98);
         hm.put("Data Structure", 85);
@@ -14,6 +15,7 @@ public class SortHashMap {
         hm.put("Java", 95);
         hm.put("Operating System", 79);
         hm.put("Networking", 80);
+        hm.forEach((key, value1) -> System.out.println(key + " " + value1));
         Map<String, Integer> hm1 = sortByValue(hm);
 
         // print the sorted hashmap
@@ -28,16 +30,10 @@ public class SortHashMap {
     {
         // Create a list from elements of HashMap
         List<Map.Entry<String, Integer> > list =
-                new LinkedList<Map.Entry<String, Integer> >(hm.entrySet());
+                new LinkedList<>(hm.entrySet());
 
         // Sort the list
-        Collections.sort(list, new Comparator<Map.Entry<String, Integer> >() {
-            public int compare(Map.Entry<String, Integer> o1,
-                               Map.Entry<String, Integer> o2)
-            {
-                return (o1.getValue()).compareTo(o2.getValue());
-            }
-        });
+        list.sort(Map.Entry.comparingByValue());
 
         // put data from sorted list to hashmap
         HashMap<String, Integer> temp = new LinkedHashMap<String, Integer>();

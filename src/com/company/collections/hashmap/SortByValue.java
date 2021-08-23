@@ -17,8 +17,7 @@ public class SortByValue {
         Collections.sort(mapValues);
         Collections.sort(mapKeys);
 
-        LinkedHashMap<Integer, String> sortMap =
-                new LinkedHashMap<>();
+        LinkedHashMap<Integer, String> sortMap = new LinkedHashMap<>();
         Iterator<String> valueIt = mapValues.iterator();
         while(valueIt.hasNext()) {
             String val = valueIt.next();

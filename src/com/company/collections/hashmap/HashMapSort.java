@@ -12,21 +12,20 @@ public class HashMapSort {
         map.put("bb",44);
 
         System.out.println("Before Sorting the Map:");
-        Set set = map.entrySet();
-        Iterator iterator = set.iterator();
+        Set<Map.Entry<String,Integer>> set = map.entrySet();
+        Iterator<Map.Entry<String,Integer>> iterator = set.iterator();
         while(iterator.hasNext()){
-            Map.Entry me = (Map.Entry)iterator.next();
+            Map.Entry<String, Integer> me = iterator.next();
             System.out.print(me.getKey()+":");
             System.out.println(me.getValue());
         }
+
         Map<String, Integer> treeMap = new TreeMap<>(map);
         System.out.println("After Sorting HashMap:");
-        Set set2 = treeMap.entrySet();
-        Iterator iterator2 = set2.iterator();
-        while (iterator2.hasNext()){
-            Map.Entry me2 = (Map.Entry)iterator2.next();
-            System.out.print(me2.getKey()+":");
-            System.out.println(me2.getValue());
+        Set<Map.Entry<String,Integer>> set2 = treeMap.entrySet();
+        for (Map.Entry<String, Integer> stringIntegerEntry : set2) {
+            System.out.print(stringIntegerEntry.getKey() + ":");
+            System.out.println(stringIntegerEntry.getValue());
         }
     }
 }

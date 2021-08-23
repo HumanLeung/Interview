@@ -54,11 +54,9 @@ public class TraversalHashMap {
         // Using for-each loop
         for (Map.Entry<String,Integer> mapElement : hm.entrySet()) {
             String key = mapElement.getKey();
-
             // Add some bonus marks
             // to all the students and print it
             int value = (mapElement.getValue() + 10);
-
             System.out.println(key + " : " + value);
         }
     }
