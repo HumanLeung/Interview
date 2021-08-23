@@ -2,7 +2,9 @@ package com.company.java8.callback;
 
 import com.company.java8.combinatorpattern.Customer;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 
 public class Lambdas {

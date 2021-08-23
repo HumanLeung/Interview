@@ -38,6 +38,7 @@ public class MapDemo {
     public static void sortMap(Map<String,Employee> map){
         // sort by keys, a,b,c..., and return a new LinkedHashMap
         // toMap() will returns HashMap by default, we need LinkedHashMap to keep the order.
+
         Map<String,Employee> result = map.entrySet().stream()
                 .sorted(Map.Entry.comparingByKey())
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,

@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 public class FixedThreadPool {
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newFixedThreadPool(2);
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 5; i++) {
             executorService.execute(new Task2(i+1));
         }
         // we prevent the executor to execute any further tasls
@@ -30,7 +30,7 @@ class Task2 implements Runnable {
         System.out.println("Task with id " + id+" is in work - thread id: "+
                 Thread.currentThread().getName());
         try {
-            TimeUnit.SECONDS.sleep(6);
+            TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException e) {
             e.printStackTrace();
             Thread.currentThread().interrupt();
