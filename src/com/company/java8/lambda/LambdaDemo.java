@@ -46,7 +46,8 @@ public class LambdaDemo {
        people.stream().max(Comparator.comparing(Person::getAge)).ifPresent(System.out::println);
 
        //grouping
-        Map<Gender,List<Person>> groupByGender = people.stream().collect(Collectors.groupingBy(Person::getGender));
+        Map<Gender,List<Person>> groupByGender = people.stream()
+                .collect(Collectors.groupingBy(Person::getGender));
 
         System.out.println(groupByGender);
         groupByGender.forEach((gender, people1) -> {

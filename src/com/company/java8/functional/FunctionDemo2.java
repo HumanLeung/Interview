@@ -30,7 +30,7 @@ public class FunctionDemo2 {
 
    static Function<Integer,Integer> multipleBy10 = number -> number * 10;
 
-  static BiFunction<Integer,Integer,Integer> incrementByOneAndMultiplyBiFunction =
+   static BiFunction<Integer,Integer,Integer> incrementByOneAndMultiplyBiFunction =
             (numberToIncrementByOne, numberToMultiplyBy) ->
                     (numberToIncrementByOne + 1) * numberToMultiplyBy;
 

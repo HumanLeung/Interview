@@ -1,5 +1,6 @@
 package com.company.java8.functional;
 
+import java.util.Collections;
 import java.util.function.Predicate;
 
 public class PredicateDemo {
