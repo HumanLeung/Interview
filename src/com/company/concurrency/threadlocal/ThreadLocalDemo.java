@@ -7,11 +7,10 @@ package com.company.concurrency.threadlocal;
  线程A， 设置(变量1) 获取(变量1)
  线程B， 设置(变量2) 获取(变量2)
  // synchronization会影响效率
-
  */
 public class ThreadLocalDemo {
     ThreadLocal<String> t1 = new ThreadLocal<>();
-    private String content;
+
     private String getContent() {
         return t1.get();
     }
@@ -23,13 +22,10 @@ public class ThreadLocalDemo {
     public static void main(String[] args) {
         ThreadLocalDemo demo = new ThreadLocalDemo();
         for (int i = 0; i < 5; i++) {
-            Thread thread = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    demo.setContent(Thread.currentThread().getName()+"'s data ");
-                    System.out.println("====================");
-                    System.out.println(Thread.currentThread().getName()+" -----> "+ demo.getContent());
-                }
+            Thread thread = new Thread(() -> {
+                demo.setContent(Thread.currentThread().getName()+"'s data ");
+                System.out.println("====================");
+                System.out.println(Thread.currentThread().getName()+" -----> "+ demo.getContent());
             });
             thread.setName("thread "+i);
             thread.start();

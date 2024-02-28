@@ -14,6 +14,7 @@ import java.util.concurrent.BlockingQueue;
  * 		put() putting items to the queue
  * 		take() taking items from the queue
  *
+ * @author Administrator
  */
 
 public class BlockingQueueDemo {
@@ -34,13 +35,13 @@ class FirstWorker implements Runnable {
     public void run() {
         int counter = 0;
         while (true) {
-     try {
-         blockingQueue.put(counter);
-         System.out.println("put item to the queue " + counter);
-         counter++;
-         Thread.sleep(10);
-     } catch (InterruptedException e) {
-         e.printStackTrace();
+          try {
+           blockingQueue.put(counter);
+           System.out.println("put item to the queue " + counter);
+           counter++;
+           Thread.sleep(10);
+         } catch (InterruptedException e) {
+           e.printStackTrace();
        }
      }
     }

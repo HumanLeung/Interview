@@ -2,6 +2,9 @@ package com.company.concurrency.executor;
 
 import java.util.concurrent.*;
 
+/**
+ * @author Administrator
+ */
 public class MyThreadPoolDemo {
     public static void main(String[] args) {
         System.out.println(Runtime.getRuntime().availableProcessors());
@@ -18,7 +21,7 @@ public class MyThreadPoolDemo {
                     try {
                         Thread.sleep(5000);
                     } catch (InterruptedException e) {
-                        e.printStackTrace();
+                        throw new RuntimeException(e);
                     }
                 });
             }

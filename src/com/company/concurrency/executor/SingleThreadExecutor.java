@@ -4,6 +4,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author Administrator
+ */
 public class SingleThreadExecutor {
     public static void main(String[] args) {
         // it is a single thread that will execute the tasks sequentially

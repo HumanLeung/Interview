@@ -3,7 +3,9 @@ package com.company.concurrency.cas;
 import java.util.concurrent.atomic.AtomicInteger;
 
 
-// What is Cas ?
+/**
+ * @author Administrator
+ */ // What is Cas ?
 // compare and swap
 public class CAS {
     public static void main(String[] args) {

@@ -14,20 +14,14 @@ public class CollectionSync {
         // concurrent collections !!!
         List<Integer> nums = Collections.synchronizedList(new ArrayList<>());
 
-        Thread t1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for (int i=0; i < 1000; i++) {
-                    nums.add(i);
-                }
+        Thread t1 = new Thread(() -> {
+            for (int i=0; i < 1000; i++) {
+                nums.add(i);
             }
         });
-        Thread t2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for (int i=0; i < 1000; i++) {
-                    nums.add(i);
-                }
+        Thread t2 = new Thread(() -> {
+            for (int i=0; i < 1000; i++) {
+                nums.add(i);
             }
         });
 
@@ -41,6 +35,6 @@ public class CollectionSync {
             e.printStackTrace();
         }
         System.out.println("Size of array: "+ nums.size());
-        // that could be cause ArrayIndexOutOfBoundsException exception duration the runtime
+        // that could because ArrayIndexOutOfBoundsException exception duration the runtime
     }
 }

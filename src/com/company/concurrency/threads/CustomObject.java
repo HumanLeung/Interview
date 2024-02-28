@@ -20,17 +20,18 @@ public class CustomObject {
     }
     public static void process() {
         Thread t1 = new Thread(() -> {
-            for (int i = 0; i < 100; ++i) {
+            for (int i = 0; i < 10; ++i) {
                 increment1();
+                System.out.println(Thread.currentThread().getName()+"---"+counter1);
             }
+
         });
 
         Thread t2 = new Thread(() -> {
-            for (int i = 0; i < 100; ++i) {
+            for (int i = 0; i < 10; ++i) {
                 increment2();
+                System.out.println(Thread.currentThread().getName()+"---"+counter2);
             }
-            System.out.println(Thread.currentThread().getName());
-            System.out.println(counter2);
         });
         t1.start();
         t2.start();

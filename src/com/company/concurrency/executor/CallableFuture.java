@@ -2,6 +2,9 @@ package com.company.concurrency.executor;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
+/**
+ * @author Administrator
+ */
 public class CallableFuture {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ExecutorService executorService = Executors.newFixedThreadPool(2);
@@ -19,7 +22,9 @@ public class CallableFuture {
         for (Future<String> future: list) {
             System.out.println(future.get()+" "+Thread.currentThread().getName());
         }
-        executorService.shutdown(); }
+
+        executorService.shutdown();
+    }
 }
 class Processor implements Callable<String> {
     private final String name;

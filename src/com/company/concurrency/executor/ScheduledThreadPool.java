@@ -4,6 +4,9 @@ import lombok.SneakyThrows;
 
 import java.util.concurrent.*;
 
+/**
+ * @author Administrator
+ */
 public class ScheduledThreadPool {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ScheduledExecutorService executorService = Executors.newScheduledThreadPool(2);
