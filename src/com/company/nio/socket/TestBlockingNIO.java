@@ -10,6 +10,9 @@ import java.nio.channels.SocketChannel;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
+/**
+ * @author Administrator
+ */
 public class TestBlockingNIO {
     // 非堵塞 NIO 三个核心
 //    1. 通道(channel): 负责连接
