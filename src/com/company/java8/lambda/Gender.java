@@ -1,5 +1,16 @@
 package com.company.java8.lambda;
 
+/**
+ * @author Administrator
+ */
+
 public enum Gender {
-    MALE, FEMALE
+    /**
+     * asdd
+     */
+    MALE,
+    /**
+     * asd
+     */
+     FEMALE
 }

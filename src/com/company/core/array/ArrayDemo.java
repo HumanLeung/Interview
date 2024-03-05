@@ -30,6 +30,7 @@ public class ArrayDemo {
          for (int i : intArray) {
              intList.add(i);
          }
+        Collections.synchronizedList(intList);
          intList.forEach(System.out::println);
 
          String [] strings = {"john","linda","listen","leeSing"};
@@ -37,6 +38,7 @@ public class ArrayDemo {
 
         List<String> stringList1 = Arrays.stream(strings).collect(Collectors.toList());
         stringList1.forEach(System.out::println);
+
 
     }
 }

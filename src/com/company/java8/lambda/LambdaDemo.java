@@ -52,7 +52,6 @@ public class LambdaDemo {
         System.out.println(groupByGender);
         groupByGender.forEach((gender, people1) -> {
             people1.forEach(System.out::println);
-//            System.out.println();
         });
 
         Optional<String> oldestFemaleAge = people.stream()

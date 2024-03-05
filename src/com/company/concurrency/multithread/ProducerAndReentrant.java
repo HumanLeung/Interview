@@ -7,24 +7,20 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ProducerAndReentrant {
     public static void main(String[] args) throws InterruptedException {
         Worker worker = new Worker();
-        Thread t1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    worker.producer();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Thread t1 = new Thread(() -> {
+            try {
+                worker.producer();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                e.printStackTrace();
             }
         });
-        Thread t2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    worker.consume();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Thread t2 = new Thread(() -> {
+            try {
+                worker.consume();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                e.printStackTrace();
             }
         });
         t1.start();

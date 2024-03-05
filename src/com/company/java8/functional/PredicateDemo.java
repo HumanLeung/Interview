@@ -20,9 +20,7 @@ public class PredicateDemo {
         return phoneNumber.startsWith("07") && phoneNumber.length() == 11;
     }
 
-//    static Predicate<String> isPhoneNumberValidPredicate = PredicateDemo::isPhoneNumberValid
     static Predicate<String> isPhoneNumberValidPredicate = phoneNumber ->
         phoneNumber.startsWith("07") && phoneNumber.length() == 11;
-
     static Predicate<String> containsNumber3 = phoneNumber -> phoneNumber.contains("3");
 }

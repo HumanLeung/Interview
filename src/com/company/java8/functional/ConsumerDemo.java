@@ -23,7 +23,7 @@ public class ConsumerDemo {
                     "and your phone number is " + customer.customerPhoneNumber);
 
     static Consumer<Customer> greetCustomerConsumer = customer ->
-            System.out.println("Hello "+customer.customerName +
+            System.out.println("Hello " + customer.customerName +
                     "and your phone number is " + customer.customerPhoneNumber);
 
     static void greetCustomer(Customer customer) {

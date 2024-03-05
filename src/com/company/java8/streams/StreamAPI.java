@@ -57,6 +57,9 @@ public class StreamAPI {
     public void test4() {
         List<String> list = Arrays.asList("ccc", "bbb", "aaa", "ddd");
         list.stream().sorted().forEach(System.out::println);
+
+        String newStr = list.stream().sorted().collect(Collectors.joining());
+        System.out.println(newStr);
     }
 
     public void test5() {
@@ -72,7 +75,7 @@ public class StreamAPI {
         System.out.println(emp.get());
     }
     public void test7() {
-       Optional<Integer>sum = employees.stream().map(Employee::getSalary).reduce(Integer::sum);
+       Optional<Integer> sum = employees.stream().map(Employee::getSalary).reduce(Integer::sum);
     }
     public void test8() {
        Set<String> set = employees.stream().map(Employee::getName)
@@ -96,6 +99,7 @@ public class StreamAPI {
                 return "old";
             }
         }));
+        System.out.println(map);
     }
 
     public void test10() {

@@ -25,13 +25,14 @@ import java.util.concurrent.Executors;
  *
  * WE CAN NOT REUSE LATCHES BUT WE CAN REUSE CyclicBarriers --> reset() !!!
  *
+ * @author Administrator
  */
 public class CyclicBarrierDemo {
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newFixedThreadPool(5);
         CyclicBarrier barrier = new CyclicBarrier(5, ()
                 -> System.out.println("We are able to use the trained neural network..."));
-        for(int i=0;i<5;++i) {
+        for(int i=0; i < 5; ++i) {
             executorService.execute(new Worker3(i + 1, barrier));
         }
         executorService.shutdown();

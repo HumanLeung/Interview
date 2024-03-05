@@ -8,6 +8,7 @@ public class LOCKS {
     private static final Lock lock = new ReentrantLock();
     public static void increment() {
         lock.lock();
+        lock.tryLock();
         for (int i=0; i<10000;i++) { counter++; }
         lock.unlock();
     }
@@ -16,18 +17,8 @@ public class LOCKS {
 //        lock.unlock();
     }
     public static void main(String[] args) throws InterruptedException {
-        Thread t1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                increment();
-            }
-        });
-        Thread t2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                increment();
-            }
-        });
+        Thread t1 = new Thread(() -> increment());
+        Thread t2 = new Thread(() -> increment());
         t1.start();
         t2.start();
         t1.join();

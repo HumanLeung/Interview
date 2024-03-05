@@ -39,6 +39,7 @@ class SecondWorker3 implements Runnable {
     @Override
     public void run() {
         try {
+            System.out.println(map);
             Thread.sleep(5000);
             System.out.println(map.get("E"));
             Thread.sleep(1000);

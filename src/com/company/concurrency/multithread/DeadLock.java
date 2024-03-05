@@ -52,7 +52,7 @@ public class DeadLock {
         System.out.println("lock1 is trying to take a lock from work2");
         lock1.lock();
         System.out.println("Worker2 acquires the lock1...");
-//        Thread.sleep(300);
+        Thread.sleep(300);
         System.out.println("sleeping finished");
         lock2.lock();
         System.out.println("Worker2 acquired the lock1...");

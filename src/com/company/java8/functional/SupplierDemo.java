@@ -5,6 +5,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.Supplier;
 
+/**
+ * @author Administrator
+ */
 public class SupplierDemo {
     public static void main(String[] args) {
         System.out.println(getDBConnectionUrl());

@@ -1,8 +1,6 @@
 package com.company.concurrency.collections;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ConcurrentArray {
