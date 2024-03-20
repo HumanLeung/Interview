@@ -2,6 +2,9 @@ package com.company.designpattern.adapter;
 
 import java.util.Random;
 
+/**
+ * @author Administrator
+ */
 public class EnemyRobot {
     Random generator = new Random();
 

@@ -1,5 +1,8 @@
 package com.company.designpattern.adapter;
 
+/**
+ * @author Administrator
+ */
 public class EnemyRobotAdapter implements EnemyAttacker{
     EnemyRobot theRobot;
     public EnemyRobotAdapter(EnemyRobot newRobot){

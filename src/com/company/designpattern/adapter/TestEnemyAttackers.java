@@ -1,5 +1,8 @@
 package com.company.designpattern.adapter;
 
+/**
+ * @author Administrator
+ */
 public class TestEnemyAttackers {
     public static void main(String[] args) {
         EnemyTank rx7Tank = new EnemyTank();

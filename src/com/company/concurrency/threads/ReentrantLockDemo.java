@@ -6,9 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ReentrantLockDemo {
     public static void main(String[] args) {
         Phone phone = new Phone();
-        new Thread(() -> {
-            phone.sendSMS();
-        },"t1").start();
+        new Thread(phone::sendSMS,"t1").start();
 
      new Thread(() -> {
          phone.sendSMS();

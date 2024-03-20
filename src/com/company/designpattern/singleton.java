@@ -1,5 +1,8 @@
 package com.company.designpattern;
 
+/**
+ * @author Administrator
+ */
 public class singleton {
     private static volatile singleton instance = null;
     private singleton() {
@@ -8,7 +11,7 @@ public class singleton {
     }
 
     //DCL Double Check Lock
-    public static singleton getInstance(){
+    public static void getInstance(){
         if (instance == null) {
            synchronized (singleton.class)
            {
@@ -18,18 +21,12 @@ public class singleton {
                }
            }
         }
-        return instance;
     }
 
     public static void main(String[] args) {
-//        System.out.println(singleton.getInstance()==singleton.getInstance());
-//        System.out.println(singleton.getInstance()==singleton.getInstance());
-//        System.out.println(singleton.getInstance()==singleton.getInstance());
 
         for (int i = 0; i < 10; i++) {
-            new Thread(() -> {
-                singleton.getInstance();
-            },String.valueOf(i)).start();
+            new Thread(singleton::getInstance,String.valueOf(i)).start();
         }
 
     }

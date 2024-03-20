@@ -1,5 +1,6 @@
 package com.company.java8.streams;
 
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
