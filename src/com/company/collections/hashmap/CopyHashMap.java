@@ -3,6 +3,9 @@ package com.company.collections.hashmap;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author Administrator
+ */
 public class CopyHashMap {
     public static void main(String[] args) {
         Map<String, Integer> hashMap = new HashMap<>();

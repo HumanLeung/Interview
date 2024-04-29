@@ -2,6 +2,9 @@ package com.company.collections;
 
 import java.util.LinkedList;
 
+/**
+ * @author Administrator
+ */
 public class ReverseLinkedList2 {
     public static void main(String[] args) {
         LinkedList<String> ll = new LinkedList<>();

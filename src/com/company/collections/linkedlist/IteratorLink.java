@@ -2,11 +2,13 @@ package com.company.collections.linkedlist;
 
 import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.ListIterator;
 
+/**
+ * @author Administrator
+ */
 public class IteratorLink {
     public static void main(String[] args) {
-        LinkedList<String> linkedList = new LinkedList<String>();
+        LinkedList<String> linkedList = new LinkedList<>();
         linkedList.add("Paypal");
         linkedList.add("Google");
         linkedList.add("Yahoo");

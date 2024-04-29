@@ -1,6 +1,6 @@
 package com.company.collections;
 
-public class Student implements Comparable<Student>{
+public class Student{
     int rollno;
     String name;
     int age;
@@ -10,10 +10,4 @@ public class Student implements Comparable<Student>{
         this.age=age;
     }
 
-
-    @Override
-    public int compareTo(Student st) {
-//        return Integer.compare(age, st.age);
-        return Integer.compare(rollno,st.rollno);
-    }
 }

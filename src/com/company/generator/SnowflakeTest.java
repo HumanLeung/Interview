@@ -3,6 +3,9 @@ package com.company.generator;
 import java.time.Instant;
 import java.util.Arrays;
 
+/**
+ * @author Administrator
+ */
 public class SnowflakeTest {
     public static void main(String[] args) {
         Snowflake snowflake = new Snowflake(784);

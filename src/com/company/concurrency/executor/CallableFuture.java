@@ -22,6 +22,7 @@ public class CallableFuture {
         for (Future<String> future: list) {
             System.out.println(future.get()+" "+Thread.currentThread().getName());
         }
+        System.out.println("main thread");
 
         executorService.shutdown();
     }

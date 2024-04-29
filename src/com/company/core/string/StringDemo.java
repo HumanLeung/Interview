@@ -46,5 +46,10 @@ public class StringDemo {
         }
         System.out.println(stringBuilder.toString());
         map.forEach((key, value1) -> System.out.println(key + " " + value1));
+
+        System.out.println(Integer.parseInt("123"));
+        System.out.println(Integer.valueOf("123"));
+        System.out.println(Integer.toString(123));
+        System.out.println(String.valueOf(123));
     }
 }

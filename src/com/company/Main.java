@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.annotation.EmptyAnnotation;
+import com.company.annotation.MyAnnotation;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -10,11 +13,37 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.*;
 
+@EmptyAnnotation
 public class Main {
 
+    int[] tab = new int[16];
+
     public static void main(String[] args) throws IOException {
-        server();
-        
+//        for(int i = 0; i < args.length; i++) {
+//            System.out.println( args[i] );
+//        }
+
+        ArrayList<String> arrayList = new ArrayList(10);
+
+        Class<?> t = Main.class;
+        MyAnnotation emptyAnnotation = t.getAnnotation(MyAnnotation.class);
+        System.out.println(emptyAnnotation instanceof MyAnnotation);
+        System.out.println(arrayList instanceof List);
+
+        System.out.println(System.getProperty("org.graalvm.nativeimage.imagecode"));
+        System.out.println(6 >> 1);
+        System.out.println(5 / 2);
+        System.out.println(1 << 30);
+        System.out.println(Integer.MAX_VALUE);
+
+        new Main().tab();
+
+    }
+
+    public void tab(){
+        tab[2] = 12;
+        System.out.println(tab[2]);
+        System.out.println(tab.length);
     }
 
     public static void server() throws IOException {

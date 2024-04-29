@@ -14,14 +14,11 @@ public class JoinTwoArray {
 
         list2.add("GeeksForGeeks");
         list2.add("A computer portal");
-
         //Print the ArrayList 2
         System.out.println("ArrayList 2: " + list2);
-
         //Join the ArrayLists
         //using Collection.addAll() method
         list1.addAll(list2);
-
         //Print the joined ArrayList
         System.out.println("Joined ArrayLists:"+list1);
     }

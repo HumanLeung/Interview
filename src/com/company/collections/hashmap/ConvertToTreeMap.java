@@ -2,6 +2,9 @@ package com.company.collections.hashmap;
 
 import java.util.*;
 
+/**
+ * @author Administrator
+ */
 public class ConvertToTreeMap {
     public static void main(String[] args) {
         Map<String, String> map = new HashMap<>();
@@ -20,8 +23,5 @@ public class ConvertToTreeMap {
 
             System.out.println(key + " : " + value);
         }
-        new LinkedHashMap<>().toString();
-
     }
-
 }

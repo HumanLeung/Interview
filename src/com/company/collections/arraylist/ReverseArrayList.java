@@ -3,6 +3,9 @@ package com.company.collections.arraylist;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * @author Administrator
+ */
 public class ReverseArrayList {
     public static void main(String[] args) {
         //Creating an ArrayList object

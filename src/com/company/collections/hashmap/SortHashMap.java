@@ -2,6 +2,9 @@ package com.company.collections.hashmap;
 
 import java.util.*;
 
+/**
+ * @author Administrator
+ */
 public class SortHashMap {
 
     public static void main(String[] args) {

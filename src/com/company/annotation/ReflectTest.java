@@ -18,4 +18,8 @@ public class ReflectTest {
         Method mehtod = cls.getMethod(methodName);
         mehtod.invoke(obj);
     }
+
+    public static void test02(){
+
+    }
 }

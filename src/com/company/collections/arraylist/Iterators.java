@@ -2,6 +2,9 @@ package com.company.collections.arraylist;
 
 import java.util.*;
 
+/**
+ * @author Administrator
+ */
 public class Iterators {
     public static void main(String[] args) {
         Iterator<Integer> iterator = Arrays.asList(1,2,3,4,5).iterator();

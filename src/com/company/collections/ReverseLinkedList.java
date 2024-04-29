@@ -6,7 +6,7 @@ import java.util.LinkedList;
 public class ReverseLinkedList {
     public static void main(String[] args) {
         // Declaring linklist without any initial size
-        LinkedList<Integer> ll = new LinkedList<Integer>();
+        LinkedList<Integer> ll = new LinkedList<>();
         // Appending elements at the end of the list
         ll.add(1);
         ll.add(2);

@@ -1,5 +1,7 @@
 package com.company.concurrency.executor;
 
+import com.company.exception.BusinessException;
+
 import java.util.concurrent.*;
 
 /**
@@ -16,7 +18,12 @@ public class MyThreadPoolDemo {
         );
         try {
             for (int i = 0; i < 20; i++) {
+                int finalI = i;
                 threadPool.execute(() -> {
+                    Thread.setDefaultUncaughtExceptionHandler(new MyUncaughtExceptionHandler("我们自定义的线程异常处理器"));
+                    if (finalI == 10){
+                        throw new BusinessException("sub-thread");
+                    }
                     System.out.println(Thread.currentThread().getName()+"\t working");
                     try {
                         Thread.sleep(5000);
@@ -27,6 +34,7 @@ public class MyThreadPoolDemo {
                 });
             }
         }catch (Exception e) {
+            System.out.println("thread-" + e.getMessage());
             e.printStackTrace();
         }finally {
             threadPool.shutdown();
