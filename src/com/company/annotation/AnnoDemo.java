@@ -10,7 +10,7 @@ public class AnnoDemo {
 
     private static final int THING = 3;
 
-    @EmptyAnnotation
+//    @EmptyAnnotation
     public static void main(String[] args) {
 
     }

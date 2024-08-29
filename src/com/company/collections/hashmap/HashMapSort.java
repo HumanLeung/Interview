@@ -15,7 +15,6 @@ public class HashMapSort {
         map.put("aa",33);
         map.put("bb",44);
 
-//        System.out.println(sortHashMapInStream(map));
         map = new LinkedHashMap<>(map);
         sortHashMap(map);
         System.out.println(map);

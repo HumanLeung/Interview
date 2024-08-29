@@ -1,5 +1,8 @@
 package com.company.algorithms.sorting;
 
+/**
+ * @author Administrator
+ */
 public class QuickSort {
     public static void main(String[] args) {
         int[] intArray = {20, 35, -15, 7, 55, 1, -22};
@@ -26,12 +29,14 @@ public class QuickSort {
         int j = end;
         while(i < j) {
             //NOTE: empty loop body
-            while(i < j && input[--j] >= pivot);
+            while(i < j && input[--j] >= pivot) {
+            }
             if (i < j) {
                 input[i] = input[j];
             }
             //NOTE: empty loop body
-            while (i < j && input[++i] <= pivot);
+            while (i < j && input[++i] <= pivot) {
+            }
             if (i < j) {
                 input[j] = input[i];
             }
